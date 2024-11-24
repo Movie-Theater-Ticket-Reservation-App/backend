@@ -4,10 +4,14 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.List;
 
 @Entity
+@Setter
+@Getter
 public class Movie {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -16,53 +20,19 @@ public class Movie {
     private String movieGenre;
     private int rate;
     private String duration;
+    private String url;
 
-    public Movie(String movieTitle, String movieGenre, int rate, String duration) {
+    public Movie(String movieTitle, String movieGenre, int rate, String duration, String url) {
         this.movieTitle = movieTitle;
         this.movieGenre = movieGenre;
         this.rate = rate;
         this.duration = duration;
+        this.url = url;
     }
 
-    public int getMovieID() {
-        return movieID;
+    public Movie() {
     }
 
-    public void setMovieID(int movieID) {
-        this.movieID = movieID;
-    }
-
-    public String getMovieTitle() {
-        return movieTitle;
-    }
-
-    public void setMovieTitle(String movieTitle) {
-        this.movieTitle = movieTitle;
-    }
-
-    public String getMovieGenre() {
-        return movieGenre;
-    }
-
-    public void setMovieGenre(String movieGenre) {
-        this.movieGenre = movieGenre;
-    }
-
-    public int getRate() {
-        return rate;
-    }
-
-    public void setRate(int rate) {
-        this.rate = rate;
-    }
-
-    public String getDuration() {
-        return duration;
-    }
-
-    public void setDuration(String duration) {
-        this.duration = duration;
-    }
     public void getTheaters(){
         System.out.println("List of theatres for this movie:....");
     }

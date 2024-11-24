@@ -4,8 +4,12 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import lombok.Getter;
+import lombok.Setter;
 
 @Entity
+@Setter
+@Getter
 public class Theatre {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,36 +25,7 @@ public class Theatre {
         this.capacity = capacity;
     }
 
-    public int getTheatreID() {
-        return theatreID;
-    }
-
-    public void setTheatreID(int theatreID) {
-        this.theatreID = theatreID;
-    }
-
-    public String getTheatreName() {
-        return theatreName;
-    }
-
-    public void setTheatreName(String theatreName) {
-        this.theatreName = theatreName;
-    }
-
-    public String getTheatreLocation() {
-        return theatreLocation;
-    }
-
-    public void setTheatreLocation(String theatreLocation) {
-        this.theatreLocation = theatreLocation;
-    }
-
-    public int getCapacity() {
-        return capacity;
-    }
-
-    public void setCapacity(int capacity) {
-        this.capacity = capacity;
+    public Theatre() {
     }
 
     public void getShowtimes(){

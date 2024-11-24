@@ -1,10 +1,14 @@
 package com.acmeplex.movieticketreservation.Model;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.List;
 
 @Entity
+@Setter
+@Getter
 public class Showtime {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,46 +25,6 @@ public class Showtime {
         this.time = time;
         this.date = date;
         this.theatreID = theatreID;
-        this.seats = seats;
-    }
-
-    public int getShowtimeID() {
-        return showtimeID;
-    }
-
-    public void setShowtimeID(int showtimeID) {
-        this.showtimeID = showtimeID;
-    }
-
-    public String getTime() {
-        return time;
-    }
-
-    public void setTime(String time) {
-        this.time = time;
-    }
-
-    public String getDate() {
-        return date;
-    }
-
-    public void setDate(String date) {
-        this.date = date;
-    }
-
-    public int getTheatreID() {
-        return theatreID;
-    }
-
-    public void setTheatreID(int theatreID) {
-        this.theatreID = theatreID;
-    }
-
-    public List<Seat> getSeats() {
-        return seats;
-    }
-
-    public void setSeats(List<Seat> seats) {
         this.seats = seats;
     }
 }
